@@ -1,0 +1,277 @@
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    }
+
+:root{
+    font-family: "Poppins", sans-serif;
+    }
+
+html {
+    width:98vw;
+    /* min-width: */
+    max-width:1440px;
+    height:125vh;
+}
+
+body {
+    height:100%;
+    background-color:hsl(0, 0%, 98%);
+}
+
+/* ----- M A I N  &   G R I D ------- */
+/* ----- M A I N  &   G R I D ------- */
+
+main{
+    width:1130px;
+    margin:auto;
+    display:grid;
+    grid-template:repeat(3, 1fr)/repeat(3,1fr);
+    align-items:center;
+    justify-items:center;
+    gap:1.5em;
+}
+
+/* ----- I N T R O --- T E X T ------ */
+/* ----- I N T R O --- T E X T ------ */
+
+.text {
+    grid-area:1/1/2/-1;
+    color:hsl(234, 12%, 34%);
+}
+    .text > *{
+        animation-name:fadein;
+        animation-iteration-count:1;
+        animation-duration:1.5s;
+        animation-timing-function:ease-in-out;
+        animation-fill-mode: backwards;
+    }
+
+.header.light{
+    font-weight:200;
+
+    animation-delay:0.2s
+}
+
+.header{
+    text-align:center;
+    font-size:2.2em;
+
+    animation-delay:1.0s
+}
+
+.text p{
+    text-align:center;
+    margin:0 auto;
+    color:hsl(229, 6%, 66%);
+    width:520px;
+    font-size:0.95em;
+    margin-top:1.2em;
+    margin-bottom:1em;
+    
+    animation-delay:2.0s
+}
+
+
+ 
+/* ------- C A R D S   S T A R T    H E R E ----- */
+/* ------- C A R D S   S T A R T    H E R E ----- */
+
+.card {
+    height:240px;
+    width:350px;
+
+    background-color:white;
+    box-shadow:0 10px 10px 2px hsla(229, 6%, 66%, 0.267);
+    border:none;
+    border-radius:0.5em;
+    border-top:0.3em solid;
+    
+    position:relative;
+    padding:2em;
+}
+
+.card-title{
+    margin-bottom:0.5em;
+}
+.card-description{
+    font-size:15pX;
+    color:hsl(229, 6%, 66%);
+    font-size:0.8em;
+    line-height:1.8em;
+}
+
+.card.one{
+    grid-area:2/1/4/2;
+    border-color:hsl(180, 62%, 55%);
+}
+
+.card.two {
+    grid-area:2/2/3/3;
+    border-color:hsl(0, 78%, 62%);
+}
+
+.card.three {
+    grid-area:3/2/4/3;
+    border-color:hsl(34, 97%, 64%);
+}
+
+.card.four {
+    grid-area:2/3/4/4;
+    border-color:hsl(212, 86%, 64%);
+}
+
+.icon{
+    width:60px;
+    aspect-ratio: 1/1;
+    position:absolute;
+    right:1.5em;
+    bottom:1.5em;
+}
+
+/* ------ A N I M A T I O N ------- */
+/* ------ A N I M A T I O N ------- */
+
+@keyframes fadein {
+    0%{opacity:0}
+    100%{opacity:100%}
+}
+
+/* ---- ANIMATION & HOVER STATE NEED TO GO INSIDE A MEDIA QUERY SO THAT THEY DON'T MESS WITH THE MOBILE VIEW ANIMATION */
+
+@media (min-width:375px){
+    
+  
+
+    .card{
+        animation-name:fadein;
+        animation-iteration-count:1;
+        animation-duration:0.5s;
+        animation-timing-function:ease-in-out;
+        animation-fill-mode: backwards;
+    }
+
+    .card.one{animation-delay:0.2s}
+    
+    .card.two {animation-delay:0.4s;}
+    
+    .card.three {animation-delay:0.6s;}
+    
+    .card.four {animation-delay:0.8s;}
+    
+    .card:hover{
+        box-shadow:0 10px 12px 2px hsla(223, 3%, 41%, 0.267);
+        transition:0.2s; 
+    }
+}
+
+
+/* ----- M O B I L E --- S C R E E N --- S T A R T S --- H E R E ----- */
+/* ----- M O B I L E --- S C R E E N --- S T A R T S --- H E R E ----- */
+/* ----- M O B I L E --- S C R E E N --- S T A R T S --- H E R E ----- */
+
+
+@media (max-width:375px){
+
+    html{
+        width:100vw;
+        overflow-x:hidden;
+        height:1400px;
+
+    }
+
+    main {
+        display:flex;
+        flex-direction:column;
+        width:320px;
+
+    }
+
+/* ----- I N T R O --- T E X T ------ */
+/* ----- I N T R O --- T E X T ------ */
+
+    .text {
+        width:100%;
+        color:hsl(234, 12%, 34%);
+        margin-top:4em;
+    }
+
+    .header.light{
+        font-weight:200;
+    }
+    
+    .header{
+        text-align:center;
+        font-size:25px;
+    }
+    
+    .text p{
+        margin:0 auto;
+        color:hsl(229, 6%, 66%);
+        width:100%;
+        font-size:0.95em;
+        margin-top:1.2em;
+        margin-bottom:3em;
+    }
+
+
+
+/* ------- C A R D S   S T A R T    H E R E ----- */
+/* ------- C A R D S   S T A R T    H E R E ----- */
+
+    .card {
+        height:240px;
+        width:320px;
+        
+        animation-duration:2s;
+        animation-iteration-count:1;
+        animation-timing-function: ease-out;
+        transition:1s;
+    }
+
+    .card:hover{
+        box-shadow:0 10px 12px 2px hsla(223, 3%, 41%, 0.267);
+        transition:0.2s; 
+    }
+
+    .card-title{
+        margin-bottom:0.5em;
+        font-size:1.2em;
+    }
+    .card-description{
+        font-size:15pX;
+        color:hsl(229, 6%, 66%);
+        font-size:0.85em;
+        line-height:1.8em;
+    }
+
+    .card.one{
+        transition:1s;
+    }
+
+    .card.two{
+        animation-name:motion-two;
+    }
+
+    .card.three{
+        animation-name:motion-three;
+    }
+
+    .card.four{
+        animation-name:motion-four;
+    }
+
+    @keyframes motion-two {
+    0% {transform:translateY(-260px)}
+    100% {transform:translateY(0)}  }
+
+    @keyframes motion-three {
+    0% {transform:translateY(-520px)}
+    100% {transform:translateY(0)}  }
+
+    @keyframes motion-four {
+        0% {transform:translateY(-780px)}
+        100% {transform:translateY(0)}  }
+
+    }
